@@ -24,9 +24,6 @@ angular
 
     // sorting ng-repeat list
 
-    $scope.header = 'name';
-    $scope.reverse = true;
-
     $scope.sortBy = function(header) {
       $scope.reverse = ($scope.header === header) ? ! $scope.reverse : false;
       $scope.header = header;
@@ -34,12 +31,12 @@ angular
 
     // game logic
 
-    $scope.shotsFired
-
     var currentTarget
 
     $scope.shoot = function() {
-
+      
+      $scope.shotsFired += 1
+      
       var randomNumber = Math.floor(Math.random() * $scope.zombiesAll.length)
       currentTarget = $scope.zombiesAll[randomNumber]
       currentTarget.hp -= currentTarget.damage
@@ -57,12 +54,6 @@ angular
         $scope.zombiesAll.splice(randomNumber, 1);
         $scope.checkWinner();
       }
-
-      console.log($scope.zombiesAll)
-
-      console.log("Target is:" + currentTarget.name + ". Its hp is:" + currentTarget.hp)
-      console.log($scope.zombiesAll.length)
-      $scope.shotsFired += 1
     }
 
     $scope.checkWinner = function() {
