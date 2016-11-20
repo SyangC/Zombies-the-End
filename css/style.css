@@ -56,6 +56,22 @@ html, body, main {
   margin-top: 15px;
 }
 
+.winner-screen h1 {
+  font-size: 40px;
+  margin: 10px;
+}
+
+.winner-screen h3 {
+  font-size: 30px;
+  margin: 10px;
+}
+
+.winner-screen a {
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+}
+
 /* ZOMBIE HP COLOURS*/
 
 .green {
