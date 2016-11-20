@@ -1,8 +1,9 @@
-<div>
+<div ng-controller="GameController as game">
   
   <h1>game</h1>
 
-    <table ng-controller="GameController as game">
+    <p>Alive (well, as it were...) Zombies</p>
+    <table>
       <tr>
         <th>
           <div ng-click="sortBy('name')">Name</div>
@@ -11,17 +12,37 @@
           <div ng-click="sortBy('hp')">Hit Points</div>
         </th>
         <th>
-          <div ng-click="sortBy('damage')">Damage</div>
+          <div ng-click="sortBy('type')">Type</div>
         </th>
       </tr>
       <tr ng-repeat="zombie in zombiesAll | orderBy: header : reverse">
         <td>{{ zombie.name }}</td>
-        <td>{{ zombie.hp }}</td>
-        <td>{{ zombie.damage }}</td>
+        <td id="{{ zombie.name }}" class="green">{{ zombie.hp }}</td>
+        <td>{{ zombie.type }}</td>
       </tr>
     </table>
 
-    <div ng-controller="GameController as game">
+    <p>Dead(er) Zombies</p>
+    <table>
+      <tr>
+        <th>
+          <div ng-click="sortBy('name')">Name</div>
+        </th>
+        <th>
+          <div ng-click="sortBy('hp')">Hit Points</div>
+        </th>
+        <th>
+          <div ng-click="sortBy('type')">Type</div>
+        </th>
+      </tr>
+      <tr ng-repeat="zombie in zombiesDead | orderBy: header : reverse" class="grey">
+        <td>{{ zombie.name }}</td>
+        <td>{{ zombie.hp }}</td>
+        <td>{{ zombie.type }}</td>
+      </tr>
+    </table>
+
+    <div>
       
       <div>
         <p>{{ shotsFired }}</p>

@@ -10,14 +10,14 @@ angular
         console.log(data)
       }).
       error(function(data, status, headers, config) {
-        // log error
       });
+
+    $scope.zombiesDead = []
 
     $scope.header = 'name';
     $scope.reverse = true;
 
     $scope.sortBy = function(header) {
-      console.log("is this working?")
       $scope.reverse = ($scope.header === header) ? ! $scope.reverse : false;
       $scope.header = header;
     };
@@ -25,8 +25,26 @@ angular
     $scope.shotsFired = 0
 
     $scope.shoot = function() {
+      var randomNumber = Math.floor(Math.random() * $scope.zombiesAll.length)
+      var currentTarget = $scope.zombiesAll[randomNumber]
+      currentTarget.hp -= currentTarget.damage
+      var hpPercentage = 100/currentTarget.maxHp*currentTarget.hp
+      console.log("hpPercentage is:" + hpPercentage)
+      if (hpPercentage < 70 && hpPercentage >= 40) {
+        document.getElementById(currentTarget.name).className = "orange";
+      } else if (hpPercentage < 40 && hpPercentage >= 1) {
+        document.getElementById(currentTarget.name).className = "red"
+      }
+
+      if(currentTarget.hp <= 0) {
+        currentTarget.hp = 0
+        $scope.zombiesDead.push(currentTarget);
+        $scope.zombiesAll.splice(randomNumber, 1);
+      }
+      console.log($scope.zombiesAll)
+
+      console.log("Target is:" + currentTarget.name + ". Its hp is:" + currentTarget.hp)
       console.log($scope.zombiesAll.length)
       $scope.shotsFired += 1
     }
-
   }
