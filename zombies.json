@@ -1,26 +1,79 @@
-[
- {
+[{
  "name": "MASTER ZOMBIE",
  "type": "master_zombie",
  "hp": 150,
  "maxHp": 150,
- "damage": 12,
- "quantity": 1
- },
- {
+ "damage": 12
+ }, {
  "name": "SUPER ZOMBIE A",
  "type": "super_zombie",
  "hp": 100,
  "maxHp": 100,
- "damage": 15,
- "quantity": 7
- },
- {
+ "damage": 15
+ }, {
+ "name": "SUPER ZOMBIE B",
+ "type": "super_zombie",
+ "hp": 100,
+ "maxHp": 100,
+ "damage": 15
+ }, {
+ "name": "SUPER ZOMBIE C",
+ "type": "super_zombie",
+ "hp": 100,
+ "maxHp": 100,
+ "damage": 15
+ }, {
+ "name": "SUPER ZOMBIE D",
+ "type": "super_zombie",
+ "hp": 100,
+ "maxHp": 100,
+ "damage": 15
+ }, {
+ "name": "SUPER ZOMBIE E",
+ "type": "super_zombie",
+ "hp": 100,
+ "maxHp": 100,
+ "damage": 15
+ }, {
+ "name": "SUPER ZOMBIE F",
+ "type": "super_zombie",
+ "hp": 100,
+ "maxHp": 100,
+ "damage": 15
+ }, {
+ "name": "SUPER ZOMBIE G",
+ "type": "super_zombie",
+ "hp": 100,
+ "maxHp": 100,
+ "damage": 15
+ }, {
  "name": "ZOMBIE A",
  "type": "zombie",
  "hp": 75,
  "maxHp": 75,
- "damage": 20,
- "quantity": 5
- }
-]
+ "damage": 20
+ }, {
+ "name": "ZOMBIE B",
+ "type": "zombie",
+ "hp": 75,
+ "maxHp": 75,
+ "damage": 20
+ }, {
+ "name": "ZOMBIE C",
+ "type": "zombie",
+ "hp": 75,
+ "maxHp": 75,
+ "damage": 20
+ }, {
+ "name": "ZOMBIE D",
+ "type": "zombie",
+ "hp": 75,
+ "maxHp": 75,
+ "damage": 20
+ }, {
+ "name": "ZOMBIE E",
+ "type": "zombie",
+ "hp": 75,
+ "maxHp": 75,
+ "damage": 20
+}]

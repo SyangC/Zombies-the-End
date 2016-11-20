@@ -4,15 +4,23 @@ angular
 
   function GameController($scope, $http, $state, $timeout) {
 
-    $http.get("../zombies.json")
-      .success(function(data, status, headers, config) {
-        $scope.zombiesAll = data;
-        console.log(data)
-      }).
-      error(function(data, status, headers, config) {
-      });
-
+    $scope.zombiesAll = []
     $scope.zombiesDead = []
+
+    // GET request from zombie.json
+
+    $scope.getZombieData = function() {
+      $http.get("../zombies.json")
+        .success(function(data, status, headers, config) {
+          $scope.zombiesAll = data;
+          console.log(data)
+        }).
+        error(function(data, status, headers, config) {
+        });
+      $scope.zombiesDead = []
+    }
+
+    // sorting ng-repeat list
 
     $scope.header = 'name';
     $scope.reverse = true;
@@ -21,6 +29,8 @@ angular
       $scope.reverse = ($scope.header === header) ? ! $scope.reverse : false;
       $scope.header = header;
     };
+
+    // game logic
 
     $scope.shotsFired = 0
 
@@ -53,13 +63,19 @@ angular
       $scope.shotsFired += 1
     }
 
+    var timeoutId
+
     $scope.checkWinner = function() {
       if ($scope.zombiesAll.length === 0 || currentTarget.name === "MASTER ZOMBIE") {
         console.log("you have won the game!")
         $state.go("winner");
-        $timeout(function() {
+        timeoutId = $timeout(function() {
           $state.go("home");
           }, 10000);
       }
     }
+
+    // $scope.clearTimeout = function() {
+    //   clearTimeout(timeoutId);
+    // }
   }
