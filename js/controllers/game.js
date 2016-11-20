@@ -19,7 +19,7 @@ angular
         });
       $scope.zombiesDead = []
       $scope.shotsFired = 0
-      clearTimeout($scope.timeout);
+      $timeout.cancel($scope.timeout);
     }
 
     // sorting ng-repeat list
