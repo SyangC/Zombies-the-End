@@ -1,0 +1,23 @@
+[
+ {
+ "name": "MASTER ZOMBIE",
+ "type": "master_zombie",
+ "hp": 150,
+ "damage": 12,
+ "quantity": 1
+ },
+ {
+ "name": "SUPER ZOMBIE A",
+ "type": "super_zombie",
+ "hp": 100,
+ "damage": 15,
+ "quantity": 7
+ },
+ {
+ "name": "ZOMBIE A",
+ "type": "zombie",
+ "hp": 75,
+ "damage": 20,
+ "quantity": 5
+ }
+]
