@@ -2,7 +2,7 @@ angular
   .module("EndClothing")
   .controller("GameController", GameController)
 
-  function GameController($scope, $http, $state) {
+  function GameController($scope, $http, $state, $timeout) {
 
     $http.get("../zombies.json")
       .success(function(data, status, headers, config) {
@@ -56,7 +56,10 @@ angular
     $scope.checkWinner = function() {
       if ($scope.zombiesAll.length === 0 || currentTarget.name === "MASTER ZOMBIE") {
         console.log("you have won the game!")
-        $state.go("winner")
+        $state.go("winner");
+        $timeout(function() {
+          $state.go("home");
+          }, 10000);
       }
     }
   }
