@@ -21,7 +21,7 @@ html, body, main {
   z-index: 1;
 }
 
-.home-centered {
+.home-centered, .winner-screen {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -42,6 +42,18 @@ html, body, main {
   color: white;
   font-size: 20px;
   text-decoration: none;
+}
+
+.game-screen {
+  padding: 5%;
+}
+
+.game-screen h1 {
+  margin-bottom: 15px;
+}
+
+.game-screen .btn {
+  margin-top: 15px;
 }
 
 /* ZOMBIE HP COLOURS*/

@@ -1,58 +1,64 @@
-<div>
+<div class="game-screen">
 
   <h1>You're suddenly attacked by a horde of zombies! You need to use your trusty shotgun to fight your way out of this situation.</h1>
 
-    <p>Alive (well, as it were...) Zombies</p>
-    <table>
-      <tr>
-        <th>
-          <div ng-click="sortBy('name')">Name</div>
-        </th>
-        <th>
-          <div ng-click="sortBy('hp')">Hit Points</div>
-        </th>
-        <th>
-          <div ng-click="sortBy('type')">Type</div>
-        </th>
-      </tr>
-      <tr ng-repeat="zombie in zombiesAll | orderBy: header : reverse">
-        <td>{{ zombie.name }}</td>
-        <td id="{{ zombie.name }}" class="green">{{ zombie.hp }}</td>
-        <td>{{ zombie.type }}</td>
-      </tr>
-    </table>
-
-    <p>Dead(er) Zombies</p>
-    <table>
-      <tr>
-        <th>
-          <div ng-click="sortBy('name')">Name</div>
-        </th>
-        <th>
-          <div ng-click="sortBy('hp')">Hit Points</div>
-        </th>
-        <th>
-          <div ng-click="sortBy('type')">Type</div>
-        </th>
-      </tr>
-      <tr ng-repeat="zombie in zombiesDead | orderBy: header : reverse" class="grey">
-        <td>{{ zombie.name }}</td>
-        <td>{{ zombie.hp }}</td>
-        <td>{{ zombie.type }}</td>
-      </tr>
-    </table>
-
+  <div>
     <div>
-      
-      <div>
-        <p>Number of shots fired: {{ shotsFired }}</p>
-      </div>
-
-      <div ng-click="shoot()">
-        SHOOT!
-      </div>
-
+      <p>Number of shots fired: {{ shotsFired }}</p>
     </div>
+
+    <div class="btn btn-danger" ng-click="shoot()">
+      SHOOT!
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <p>Alive (well, as it were...) Zombies</p>
+        <table class="table">
+          <tr>
+            <th>
+              <div ng-click="sortBy('name')">Name</div>
+            </th>
+            <th>
+              <div ng-click="sortBy('hp')">Hit Points</div>
+            </th>
+            <th>
+              <div ng-click="sortBy('type')">Type</div>
+            </th>
+          </tr>
+          <tr ng-repeat="zombie in zombiesAll | orderBy: header : reverse">
+            <td>{{ zombie.name }}</td>
+            <td id="{{ zombie.name }}" class="green">{{ zombie.hp }}</td>
+            <td>{{ zombie.type }}</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="col-md-6">
+        <p>Dead(er) Zombies</p>
+        <table class="table">
+          <tr>
+            <th>
+              <div ng-click="sortBy('name')">Name</div>
+            </th>
+            <th>
+              <div ng-click="sortBy('hp')">Hit Points</div>
+            </th>
+            <th>
+              <div ng-click="sortBy('type')">Type</div>
+            </th>
+          </tr>
+          <tr ng-repeat="zombie in zombiesDead | orderBy: header : reverse" class="grey">
+            <td>{{ zombie.name }}</td>
+            <td>{{ zombie.hp }}</td>
+            <td>{{ zombie.type }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 
   <a ui-sref="home">Back</a>
 

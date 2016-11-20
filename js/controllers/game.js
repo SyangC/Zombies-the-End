@@ -18,6 +18,8 @@ angular
         error(function(data, status, headers, config) {
         });
       $scope.zombiesDead = []
+      $scope.shotsFired = 0
+      clearTimeout($scope.timeout);
     }
 
     // sorting ng-repeat list
@@ -32,7 +34,7 @@ angular
 
     // game logic
 
-    $scope.shotsFired = 0
+    $scope.shotsFired
 
     var currentTarget
 
@@ -63,19 +65,13 @@ angular
       $scope.shotsFired += 1
     }
 
-    var timeoutId
-
     $scope.checkWinner = function() {
       if ($scope.zombiesAll.length === 0 || currentTarget.name === "MASTER ZOMBIE") {
         console.log("you have won the game!")
         $state.go("winner");
-        timeoutId = $timeout(function() {
+        $scope.timeout = $timeout(function() {
           $state.go("home");
-          }, 10000);
+        }, 10000)
       }
     }
-
-    // $scope.clearTimeout = function() {
-    //   clearTimeout(timeoutId);
-    // }
   }
