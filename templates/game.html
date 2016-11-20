@@ -1,9 +1,36 @@
-<div ng-controller="ZombiesController as zombies">
+<div>
   
   <h1>game</h1>
 
-    <div ng-repeat="zombie in zombies">
-      <p>{{zombie.name}}</p>
+    <table ng-controller="GameController as game">
+      <tr>
+        <th>
+          <div ng-click="sortBy('name')">Name</div>
+        </th>
+        <th>
+          <div ng-click="sortBy('hp')">Hit Points</div>
+        </th>
+        <th>
+          <div ng-click="sortBy('damage')">Damage</div>
+        </th>
+      </tr>
+      <tr ng-repeat="zombie in zombiesAll | orderBy: header : reverse">
+        <td>{{ zombie.name }}</td>
+        <td>{{ zombie.hp }}</td>
+        <td>{{ zombie.damage }}</td>
+      </tr>
+    </table>
+
+    <div ng-controller="GameController as game">
+      
+      <div>
+        <p>{{ shotsFired }}</p>
+      </div>
+
+      <div ng-click="shoot()">
+        SHOOT!
+      </div>
+
     </div>
 
   <a ui-sref="home">Back</a>

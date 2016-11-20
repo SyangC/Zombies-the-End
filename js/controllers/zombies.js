@@ -1,22 +1,25 @@
-angular
-  .module("EndClothing")
-  .controller("ZombiesController", ZombiesController)
+// angular
+//   .module("EndClothing")
+//   .controller("ZombiesController", ZombiesController)
 
 // function ZombiesController($scope, $http) {
-//   $http({
-//     method: "POST",
-//     url: "../zombies.json"
-//   }).success(function(data) {
-//     $scope.zombies = data;
-//   });
-// }
 
-function ZombiesController($scope, $http) {
-  $http.get("../zombies.json")
-    .success(function(data, status, headers, config) {
-      $scope.zombies = data;
-    }).
-    error(function(data, status, headers, config) {
-      // log error
-    });
-}
+//   $http.get("../zombies.json")
+//     .success(function(data, status, headers, config) {
+//       $scope.zombiesAll = data;
+//       console.log(data)
+//     }).
+//     error(function(data, status, headers, config) {
+//       // log error
+//     });
+
+//   $scope.header = 'name';
+//   $scope.reverse = true;
+
+//   $scope.sortBy = function(header) {
+//     console.log("is this working?")
+//     $scope.reverse = ($scope.header === header) ? ! $scope.reverse : false;
+//     $scope.header = header;
+//   };
+
+// }
